@@ -1,0 +1,276 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.settings-panel {
+    background-color: #3a6ea5;
+    padding: 20px;
+    width: 300px;
+    overflow-y: auto;
+    color: white;
+}
+
+.settings-panel h1,
+.settings-panel h2 {
+    margin-top: 0;
+    color: white;
+    text-align: center;
+}
+
+.settings-panel label {
+    display: block;
+    margin: 10px 0 5px;
+    color: white;
+}
+
+.settings-panel input,
+.settings-panel select,
+.settings-panel button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+}
+
+.settings-panel button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.settings-panel button:hover {
+    background-color: #45a049;
+}
+
+.settings-panel .toggle-button {
+    background-color: #007bff;
+    margin-bottom: 10px;
+}
+
+#show-hide-options {
+    margin-top: 10px;
+    display: none;
+}
+
+.settings-panel input[type="number"] {
+    background-color: #444;
+    color: white;
+    text-align: center;
+}
+
+.settings-panel select {
+    background-color: #444;
+    color: white;
+}
+
+.settings-panel .options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.settings-panel .options-grid div {
+    background-color: #444;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.settings-panel .options-grid div.selected {
+    background-color: #f44336;
+}
+
+.resume-input {
+    background-color: #3a6ea5;
+    padding: 20px;
+    width: 300px;
+    overflow-y: auto;
+}
+
+.resume-input h2 {
+    margin-top: 0;
+}
+
+.resume-input label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.resume-input input,
+.resume-input textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+}
+
+.resume-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.resume {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0 0 0;
+    color: #333;
+}
+
+.resume p,
+.resume div {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.5;
+    color: black;
+}
+
+.resume div {
+    white-space: pre-wrap;
+}
+
+/* Heading Styles */
+.ruled-above::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+.ruled-below::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+.shaded {
+    background-color: #595656;
+    padding: 2px 5px;
+    margin: 10px 0;
+}
+
+.settings-panel .section-toggle {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.style-bar {
+    width: 250px;
+    background-color: #6a1b9a;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.style-bar h2, .style-bar h3 {
+    margin-top: 0;
+}
+
+.style-bar label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.style-bar select,
+.style-bar input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a148c;
+}
+
+.sections-container {
+    display: none;
+    margin-top: 20px;
+}
+
+.sections-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.section-separator {
+    border: 0;
+    border-top: 2px solid #ddd;
+    margin: 20px 0;
+}
+
+.ruled h2 {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.shaded h2 {
+    background-color: #ddd;
+    padding: 5px;
+    margin: 0 -20px; /* Adjust for padding */
+    padding: 5px 20px;
+}
+
+.above-title .section-separator {
+    order: 0;
+}
+
+.above-title h2 {
+    order: 1;
+}
+
+.below-title h2 {
+    order: 0;
+}
+
+.below-title .section-separator {
+    order: 1;
+}
