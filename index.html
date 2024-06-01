@@ -1,52 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Builder</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Include html2pdf.js library -->
-    <script src = "main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="style-bar">
             <h2>Template Settings</h2>
-            <label>
-                Font Type:
+            <label>Contact lines
+                <select id="contactLines">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </label>
+            <label>Font Type:
                 <select id="fontType">
                     <option value="Arial">Arial</option>
                     <option value="Times New Roman">Times New Roman</option>
                     <option value="Courier New">Courier New</option>
                 </select>
             </label>
-            <label>
-                Line Spacing:
+            <label>Line Spacing:
                 <select id="lineSpacing">
                     <option value="1">1</option>
                     <option value="1.5">1.5</option>
                     <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
                 </select>
             </label>
-            <label>
-                Font Size:
+            <label>Font Size:
                 <input type="number" id="fontSize" value="16">
             </label>
-
-            <label>
-                Title Style:
+            <label>Title Style:
                 <select id="titleStyle">
                     <option value="ruled">Ruled</option>
                     <option value="shaded">Shaded</option>
                 </select>
-                
             </label>
-            <label>
-                
-
-            
-                Title Position:
+            <label>Title Position:
                 <select id="titlePosition">
                     <option value="above">Above Title</option>
                     <option value="below">Below Title</option>
@@ -54,36 +54,30 @@
             </label>
             <button onclick="generatePDF()">Print as PDF</button>
             <button id="toggleSectionsButton">Show/Hide Sections</button>
-            <div id="sectionsContainer" class="sections-container">
-                <label>
-                    <input type="checkbox" id="toggleEducation" checked> Education
-                </label>
-                <label>
-                    <input type="checkbox" id="toggleTechSkills" checked> Technical Skills
-                </label>
-                <label>
-                    <input type="checkbox" id="toggleExperience" checked> Experience
-                </label>
-                <label>
-                    <input type="checkbox" id="togglePositions" checked> Positions of Responsibility
-                </label>
-                <label>
-                    <input type="checkbox" id="toggleAchievements" checked> Achievements
-                </label>
-                <label>
-                    <input type="checkbox" id="toggleCourses" checked> Key Courses Taken
-                </label>
-                <label>
-                    <input type="checkbox" id="toggleLinks" checked> Links
-                </label>
-                <label>
-                    <input type="checkbox" id="toggleHobbies" checked> Hobbies
-                </label>
+           <div id="sectionsModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="sectionsContainer">
+                    <label><input type="checkbox" id="toggleEducation" checked> Education</label>
+                    <label><input type="checkbox" id="toggleTechSkills" checked> Technical Skills</label>
+                    <label><input type="checkbox" id="toggleExperience" checked> Experience</label>
+                    <label><input type="checkbox" id="togglePositions" checked> Positions of Responsibility</label>
+                    <label><input type="checkbox" id="toggleAchievements" checked> Achievements</label>
+                    <label><input type="checkbox" id="toggleCourses" checked> Key Courses Taken</label>
+                    <label><input type="checkbox" id="toggleLinks" checked> Links</label>
+                    <label><input type="checkbox" id="toggleHobbies" checked> Hobbies</label>
+                </div>
             </div>
+           </div>
         </div>
         <div class="resume-container">
             <div id="resume" class="resume">
                 <h1 contenteditable="true">Abc xyz</h1>
+                <div id="contact-info">
+                    <p class="contact" id="contact1">+91-9999999999</p>
+                    <p class="contact" id="contact2">xyzabc@hotmail.com</p>
+                    <p class="contact" id="contact3">xyzabc.github.io</p>
+                </div>
                 <hr class="section-separator">
                 <section id="education" contenteditable="true">
                     <h2>Education</h2>
@@ -145,23 +139,23 @@
                 <section id="links" contenteditable="true">
                     <h2>Links</h2>
                     <ul>
-                    <li>GitHub://xyz</li>
-                    <li>Linkedin://xyz</li>
-                    <li>Medium://xyz</li>
-                    <li>CodeChef://xyz</li>
-                    <li>HackerRank://xyz</li>
-                    <li>Web-Page://xyz.github.io</li>
+                        <li>GitHub://xyz</li>
+                        <li>Linkedin://xyz</li>
+                        <li>Medium://xyz</li>
+                        <li>CodeChef://xyz</li>
+                        <li>HackerRank://xyz</li>
+                        <li>Web-Page://xyz.github.io</li>
                     </ul>
                 </section>
                 <hr class="section-separator">
                 <section id="hobbies" contenteditable="true">
                     <h2>Hobbies</h2>
                     <ul>
-                    <li>PHOTOGRAPHY</li>
-                    <li>QUORA WRITING</li>
-                    <li>VIDEO EDITING</li>
-                    <li>WATCHING STANDUP COMEDY</li>
-                </ul>
+                        <li>PHOTOGRAPHY</li>
+                        <li>QUORA WRITING</li>
+                        <li>VIDEO EDITING</li>
+                        <li>WATCHING STANDUP COMEDY</li>
+                    </ul>
                 </section>
             </div>
         </div>
@@ -169,7 +163,3 @@
     <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
